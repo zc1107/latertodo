@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_todo"
+        android:icon="@drawable/todo_0"
+        android:title="待办" />
+
+    <item
+        android:id="@+id/navigation_collection"
+        android:icon="@drawable/collection_0"
+        android:title="统计" />
+
+    <item
+        android:id="@+id/navigation_listen"
+        android:icon="@drawable/listen_0"
+        android:title="倾听" />
+
+    <item
+        android:id="@+id/navigation_me"
+        android:icon="@drawable/me_0"
+        android:title="我的" />
+
+</menu>
