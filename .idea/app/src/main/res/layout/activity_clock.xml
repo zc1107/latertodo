@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/clock_bg"
+    tools:context=".ClockActivity">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/back_1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"/>
+
+    <com.example.latertodo.CountdownView
+        android:id="@+id/view_countdown"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_above="@+id/paiban"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <ImageView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <ImageView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <ImageView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/whitenoise"
+            android:src="@drawable/whitenoise_1"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/paiban"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/fanzhuan"
+            android:layout_weight="1"
+            android:src="@drawable/fanzhuan_1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <ImageView
+            android:id="@+id/whitename"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/whitename_1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <ImageView
+            android:id="@+id/pause"
+            android:src="@drawable/pause_1"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <ImageView
+            android:id="@+id/stop"
+            android:src="@drawable/stop_1"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

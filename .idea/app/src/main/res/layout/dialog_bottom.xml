@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/shape_bottomdialogbg"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/name_todo"
+            android:layout_width="150dp"
+            android:hint="准备做什么？"
+            android:layout_alignParentLeft="true"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="#737479"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/add_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:text="ADD"
+            android:textSize="18dp"
+            android:textColor="#56a2c1" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/time_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentLeft="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="#3f454b"
+                android:text="预计完成时间 "
+                />
+            <EditText
+                android:id="@+id/time_todo"
+                android:layout_width="50dp"
+                android:hint="15"
+                android:textColorHint="#737479"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="#3f454b"
+                android:text="min"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_alignParentRight="true">
+
+            <CheckBox
+                android:id="@+id/radio1"
+                style="@style/select_style"
+                android:tag="rd1"
+                android:text="AM."
+                android:textSize="16dp"/>
+
+            <CheckBox
+                android:id="@+id/radio2"
+                style="@style/select_style"
+                android:tag="rd2"
+                android:text="PM."
+                android:textSize="16dp"/>
+
+            <CheckBox
+                android:id="@+id/radio3"
+                style="@style/select_style"
+                android:tag="rd3"
+                android:text="night"
+                android:textSize="16dp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
