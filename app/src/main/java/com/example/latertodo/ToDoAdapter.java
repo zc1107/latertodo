@@ -1,6 +1,7 @@
 package com.example.latertodo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,17 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> im
             time = (TextView) view.findViewById(R.id.time_of_todo);
             name = (TextView) view.findViewById(R.id.name_of_todo);
             start = (Button) view.findViewById(R.id.start);
+
+            start.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String time_1 = time.getText().toString().substring(0, time.getText().toString().length()-3);
+                    Intent intent = new Intent(view.getContext(), ClockActivity.class);
+                    int time_2 = Integer.parseInt(time_1);
+                    intent.putExtra("time", time_2 * 60);
+                    view.getContext().startActivity(intent);
+                }
+            });
         }
 
     }
@@ -84,6 +96,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> im
 
     public interface OnItemClickListener{
         void onItemClick(int position);
+        void onItemLongClick(int position);
     }
 
     private OnItemClickListener mItemClickListener;

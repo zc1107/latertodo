@@ -2,6 +2,7 @@ package com.example.latertodo.ui;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.icu.text.SimpleDateFormat;
 import android.net.ParseException;
@@ -23,6 +24,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.latertodo.ClockActivity;
+//import com.example.latertodo.MyItemClickListener;
 import com.example.latertodo.MyItemClickListener;
 import com.example.latertodo.R;
 import com.example.latertodo.ToDoAdapter;
@@ -52,7 +55,6 @@ public class TodoFragment extends Fragment {
 
     private QMUITopBarLayout bar;
     private FloatingActionButton addButton;
-    private Button model;
     private ImageButton set;
 
     private TextView yesterday_date;
@@ -137,6 +139,10 @@ public class TodoFragment extends Fragment {
         recyclerView_1.addOnItemTouchListener(new MyItemClickListener(recyclerView_1){
             @Override
             public void onItemClick(RecyclerView.ViewHolder viewHolder) {
+            }
+
+            @Override
+            public void onItemLongClick(RecyclerView.ViewHolder viewHolder) {
                 Dialog bottomDialog = showBottomDialog(view);
 
                 Button add_2 = bottomDialog.findViewById(R.id.add_detail);
@@ -165,9 +171,13 @@ public class TodoFragment extends Fragment {
         adapter_2 = new ToDoAdapter(toDoLists_2);
         recyclerView_2.setLayoutManager(manager_2);
         recyclerView_2.setAdapter(adapter_2);
-        recyclerView_2.addOnItemTouchListener(new MyItemClickListener(recyclerView_1){
+        recyclerView_2.addOnItemTouchListener(new MyItemClickListener(recyclerView_2){
             @Override
             public void onItemClick(RecyclerView.ViewHolder viewHolder) {
+            }
+
+            @Override
+            public void onItemLongClick(RecyclerView.ViewHolder viewHolder) {
                 Dialog bottomDialog = showBottomDialog(view);
 
                 Button add_2 = bottomDialog.findViewById(R.id.add_detail);
@@ -196,9 +206,14 @@ public class TodoFragment extends Fragment {
         adapter_3 = new ToDoAdapter(toDoLists_3);
         recyclerView_3.setLayoutManager(manager_3);
         recyclerView_3.setAdapter(adapter_3);
-        recyclerView_3.addOnItemTouchListener(new MyItemClickListener(recyclerView_1){
+        recyclerView_3.addOnItemTouchListener(new MyItemClickListener(recyclerView_3){
             @Override
             public void onItemClick(RecyclerView.ViewHolder viewHolder) {
+
+            }
+
+            @Override
+            public void onItemLongClick(RecyclerView.ViewHolder viewHolder) {
                 Dialog bottomDialog = showBottomDialog(view);
 
                 Button add_2 = bottomDialog.findViewById(R.id.add_detail);
@@ -288,6 +303,7 @@ public class TodoFragment extends Fragment {
                 });
             }
         });
+
         return view;
     }
 

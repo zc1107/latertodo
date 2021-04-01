@@ -48,6 +48,8 @@ public abstract class MyItemClickListener extends RecyclerView.SimpleOnItemTouch
      */
     public abstract void onItemClick(RecyclerView.ViewHolder vh);
 
+    public abstract void onItemLongClick(RecyclerView.ViewHolder vh);
+
     private class MyGestureListener extends GestureDetector.SimpleOnGestureListener{
 
         /**
@@ -64,5 +66,16 @@ public abstract class MyItemClickListener extends RecyclerView.SimpleOnItemTouch
             }
             return true;
         }
+
+        @Override
+        public void onLongPress(MotionEvent e){
+            View childView = mRecyclerView.findChildViewUnder(e.getX(), e.getY());
+            if (childView != null) {
+                RecyclerView.ViewHolder viewHolder =
+                        mRecyclerView.getChildViewHolder(childView);
+                onItemLongClick(viewHolder);//触发回调
+            }
+        }
+
     }
 }
