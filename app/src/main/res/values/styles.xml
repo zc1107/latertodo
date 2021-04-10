@@ -1,7 +1,10 @@
 <resources>
-
     <style name="Widget.Theme.MaterialComponents.NoActionBar.MyView" parent="">
         <item name="android:background">@color/gray_400</item>
         <item name="exampleColor">@color/light_blue_400</item>
+    </style>
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">16dp</item>
     </style>
 </resources>

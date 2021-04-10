@@ -2,20 +2,30 @@ package com.example.latertodo.ui;
 
 import android.os.Bundle;
 
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.latertodo.R;
+import com.example.latertodo.viewpager.MyFragment1;
+import com.example.latertodo.viewpager.MyFragment2;
+import com.example.latertodo.viewpager.MyFragment3;
+import com.example.latertodo.viewpager.MyFragmentAdapter;
+import com.google.android.material.tabs.TabLayout;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class MeFragment extends Fragment {
+
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +71,36 @@ public class MeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_me, container, false);
+        View view = inflater.inflate(R.layout.fragment_me, container, false);
+        tabLayout = (TabLayout) view.findViewById(R.id.tablayout_me);
+        viewPager = (ViewPager) view.findViewById(R.id.viewpager_me);
+
+        viewPager.setOffscreenPageLimit(2);
+        initViewPager();
+
+        return view;
     }
+
+    private void initViewPager(){
+        List<String> titleList = new ArrayList<>();
+        titleList.add("收藏的声音");
+        titleList.add("我的声音");
+        titleList.add("加入的自习室");
+
+        for(int i = 0;i < titleList.size();i++){
+            tabLayout.addTab(tabLayout.newTab().setText(titleList.get(i)));
+        }
+
+        List<Fragment> fragmentList = new ArrayList<>();
+        fragmentList.add(new MyFragment1());
+        fragmentList.add(new MyFragment2());
+        fragmentList.add(new MyFragment3());
+
+
+        MyFragmentAdapter myFragmentAdapter = new MyFragmentAdapter(getChildFragmentManager(), fragmentList, titleList);
+        viewPager.setAdapter(myFragmentAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+    }
+
+
 }

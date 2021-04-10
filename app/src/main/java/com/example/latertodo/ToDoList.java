@@ -3,6 +3,7 @@ package com.example.latertodo;
 import java.util.Date;
 
 public class ToDoList {
+    private byte[] headshot;
     private String nameOfToDo;
     private String timeOfToDo;
 
@@ -22,6 +23,10 @@ public class ToDoList {
 
     public String getTimeOfToDo(){
         return timeOfToDo;
+    }
+
+    public byte[] getHeadshot() {
+        return headshot;
     }
 
 }
